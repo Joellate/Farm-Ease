@@ -2,6 +2,12 @@
 
 Smart full-stack platform enabling smallholder farmers to list produce, learn storage techniques, and connect with buyers.
 
+## 🚀 **QUICK START - CLICK HERE!**
+
+**👉 [START_HERE.md](./START_HERE.md) - Step-by-step guide to run the app and see it in your browser!**
+
+**📍 Where to open the app:** `http://localhost:5173` (after starting both servers)
+
 ## Tech Stack
 
 - Backend: Node.js, Express, PostgreSQL, JWT auth.
@@ -101,8 +107,13 @@ _Add auth middleware before production so only authenticated farmers can create/
 
 ## Assignment Status
 
-- Public repository ✅
-- Backend + frontend skeleton ✅
-- README setup guide ✅
-- Google Doc + video deliverables: postponed per latest instruction.
+- ✅ Public repository: `https://github.com/Joellate/Farm-Ease.git`
+- ✅ Backend + frontend fully implemented
+- ✅ README setup guide with step-by-step instructions
+- ✅ Database migration scripts included
+- ✅ All functional requirements from SRS implemented
+- ⚠️ Deployment: Configs ready (see `DEPLOYMENT.md`)
+- ⏸️ Google Doc + video deliverables: To be added
+
+**📋 See [REQUIREMENTS_CHECKLIST.md](./REQUIREMENTS_CHECKLIST.md) for detailed compliance status.**
 

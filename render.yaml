@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: farmease-backend
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: farmease-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+
+databases:
+  - name: farmease-db
+    plan: free
+    databaseName: farmease
+    user: farmease_user
+
