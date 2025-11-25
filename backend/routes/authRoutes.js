@@ -5,20 +5,26 @@ const jwt = require('jsonwebtoken');
 const { createUser, findUserByEmail } = require('../models/userModel');
 
 const router = express.Router();
+// Using JWT for secure authentication - token expires in 7 days
 const JWT_SECRET = process.env.JWT_SECRET || 'super-secret-key';
 
+// Register new farmers or buyers
 router.post('/register', async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
+    
+    // Basic validation - check required fields
     if (!name || !email || !password) {
       return res.status(400).json({ message: 'Name, email, and password are required.' });
     }
 
+    // Check if email already registered
     const existingUser = await findUserByEmail(email);
     if (existingUser) {
       return res.status(409).json({ message: 'User already exists.' });
     }
 
+    // Hash password before storing (security best practice)
     const passwordHash = await bcrypt.hash(password, 10);
     const user = await createUser({ name, email, passwordHash, role });
 
